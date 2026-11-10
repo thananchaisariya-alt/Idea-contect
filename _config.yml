@@ -10,6 +10,7 @@ url: ""
 permalink: /:year/:month/:title/
 markdown: kramdown
 exclude:
+  - _drafts
   - strategy
   - README.md
   - Gemfile

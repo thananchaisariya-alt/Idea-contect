@@ -1,0 +1,17 @@
+# ตั้งค่าเว็บบล็อก — แก้ชื่อ/คำโปรยได้ที่นี่
+title: "เล่าจีน"
+title_zh: "聊聊泰国"
+description: "เล่าเรื่องจีนให้คนไทยเข้าใจ และพาคนจีนเที่ยวไทยแบบคนพื้นที่"
+description_zh: "住在泰国的本地人，带你避坑、吃好、玩好"
+author: "เล่าจีน"
+lang: th
+baseurl: "/Idea-contect"   # ชื่อ repo บน GitHub Pages (ถ้าใช้โดเมนตัวเอง ให้เว้นว่าง "")
+url: ""
+permalink: /:year/:month/:title/
+markdown: kramdown
+exclude:
+  - strategy
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

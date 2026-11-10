@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<article class="post">
+  <p class="meta">
+    <span class="tag">{{ page.category_label }}</span>
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+  </p>
+  <h1>{{ page.title }}</h1>
+  {% if page.excerpt_text %}<p class="lede">{{ page.excerpt_text }}</p>{% endif %}
+  <div class="body">
+    {{ content }}
+  </div>
+  <p class="back">
+    {% if page.lang == "zh" %}<a href="{{ '/zh/' | relative_url }}">← 返回全部文章</a>
+    {% else %}<a href="{{ '/' | relative_url }}">← กลับไปหน้าบทความทั้งหมด</a>{% endif %}
+  </p>
+</article>

@@ -1,0 +1,34 @@
+<!doctype html>
+{% assign zh = false %}{% if page.lang == "zh" %}{% assign zh = true %}{% endif %}
+<html lang="{% if zh %}zh-Hans{% else %}th{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{% if zh %}{{ site.title_zh }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt_text %}{{ page.excerpt_text }}{% elsif zh %}{{ site.description_zh }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="{% if zh %}{{ '/zh/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">
+        <span class="seal">{% if zh %}泰{% else %}中{% endif %}</span>
+        <span>{% if zh %}{{ site.title_zh }}{% else %}{{ site.title }}{% endif %}</span>
+      </a>
+      <nav>
+        <a href="{{ '/' | relative_url }}">บทความไทย</a>
+        <a href="{{ '/zh/' | relative_url }}">中文</a>
+        <a href="{{ '/about/' | relative_url }}">เกี่ยวกับ</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">© {{ site.time | date: "%Y" }} {{ site.title }} · {{ site.title_zh }}</div>
+  </footer>
+</body>
+</html>

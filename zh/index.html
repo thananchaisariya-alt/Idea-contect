@@ -1,0 +1,21 @@
+---
+layout: default
+lang: zh
+title: 全部文章
+---
+<section class="hero">
+  <h1>{{ site.title_zh }}</h1>
+  <p>{{ site.description_zh }}</p>
+</section>
+<ul class="post-list">
+  {% assign posts = site.posts | where: "lang", "zh" %}
+  {% for post in posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">
+      <p class="meta"><span class="tag">{{ post.category_label }}</span> <time>{{ post.date | date: "%Y-%m-%d" }}</time></p>
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.excerpt_text }}</p>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
